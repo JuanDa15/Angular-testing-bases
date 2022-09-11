@@ -11,6 +11,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma'),
+      // Install the karma mocha reporter - npm install karma-mocha-reporter
       require('karma-mocha-reporter')
     ],
     client: {
@@ -32,6 +33,7 @@ module.exports = function (config) {
         { type: 'html' },
         { type: 'text-summary' }
       ],
+      // Add parameters to the coverage report
       check: {
         global: {
           statements: 90,
@@ -41,6 +43,7 @@ module.exports = function (config) {
         }
       }
     },
+    // Change the default reporter for mocha
     reporters: ['mocha'],
     port: 9876,
     colors: true,
