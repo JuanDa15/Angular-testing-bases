@@ -7,9 +7,11 @@ describe('ValueService', () => {
   beforeEach(() => {
     // Arrange
     TestBed.configureTestingModule({
-      providers: [ ValueService ]
+      providers: [ValueService]
     });
     service = TestBed.inject(ValueService);
+    // Without using angular tools
+    // service = new ValueService();
   });
 
   it('should be created', () => {
@@ -55,7 +57,7 @@ describe('ValueService', () => {
 
   describe('Test for observable',() => {
     it('should return a value from an observable', () => {
-      service.getObservableValue().subscribe((value) => {
+      service.getObservableValue().subscribe((value: string) => {
         expect(value).toBe('of value');
       })
     });
